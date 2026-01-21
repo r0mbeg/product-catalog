@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    container_name: product-catalog-api
+    ports:
+      - "8000:8000"
+    environment:
+      DB_PATH: /data/app.db
+      SEED_PATH: /app/insert.sql
+    volumes:
+      - ./data:/data
